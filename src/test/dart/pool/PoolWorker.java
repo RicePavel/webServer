@@ -6,6 +6,7 @@
 package test.dart.pool;
 
 import java.util.Deque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  *
@@ -13,22 +14,23 @@ import java.util.Deque;
  */
 public class PoolWorker extends Thread {
 
-  private Deque<Runnable> queue;
+  private final ConcurrentLinkedDeque<Runnable> queue;
 
-  public PoolWorker(Deque queue) {
+  public PoolWorker(ConcurrentLinkedDeque queue) {
     this.queue = queue;
   }
 
+  @Override
   public void run() {
     try {
       while (true) {
         Runnable runnable;
-        synchronized (queue) {
-          while (queue.isEmpty()) {
+        while (queue.isEmpty()) {
+          synchronized (queue) {
             queue.wait();
           }
-          runnable = queue.getFirst();
         }
+        runnable = queue.removeFirst();
         runnable.run();
       }
     } catch (Exception e) {

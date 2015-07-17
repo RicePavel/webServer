@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Вуз59.ру</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+	<!--  <script type="text/javascript" src="scripts/jquery-1.3.1.min.js"></script> -->
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
+</head>
+<body>
+	<div class="header">
+		<table width="100%" class="fixed">
+			<tr>
+				<td class="left"><a href="#" class="a-logo"><img src="images/logo.png" height="44px" width="77px"/></a></td>
+				<td class="right" style="min-width: 670px !important; background: #eaebee; position: relative;">
+					<a class="exit">Админ</a>
+					<a class="square-area bell fade"><div class="msg">10</div></a>
+					<a class="square-area calendar fade" id="show-calendar"></a>
+
+					<div id='calendar'>
+						<table>
+							<tr>
+								<td width="410px">		
+									<div class="calendar-area">
+										<h2>20 Января, Вторник, <span class="year">2015</span></h2>
+										 <span id="ui-calendar" > </span>
+									</div>
+								</td>
+								<td width="250px" valign="top">
+									<div class="calendar-order-list">
+										<div class="gray-bg"></div>
+										<div class="date-item" data="08.04.2015">
+											<table>
+												<tr>
+													<th>№</th>
+													<th>Тема</th>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>По бж первая помощь при травматическом шоке Какие последствия и т.д., можно иллюстрации.</td>
+												</tr>
+												<tr class="item-blue">
+													<td>2</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+												<tr class="item-orange">
+													<td>4</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+												
+											</table>
+										</div>
+
+										<div class="date-item" data="09.04.2015">
+											<table>
+												<tr>
+													<th>№</th>
+													<th>Тема</th>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>По бж первая помощь при травматическом шоке Какие последствия и т.д., можно иллюстрации.</td>
+												</tr>
+												<tr class="item-blue">
+													<td>2</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+												<tr class="item-orange">
+													<td>3</td>
+													<td>Универсальные атрибуты применяются практически ко всем тегам, поэтому выделены в отдельную группу, чтобы не повторять их для всех тегов.</td>
+												</tr>
+											</table>
+										</div
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div> 
+
+					<div class="search-area">
+						<form>
+							<input type="text" placeholder="Поиск" class="search-input">
+							<input type="reset" value="">
+							<input type="submit" value="" />
+						</form>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<table width="100%" class="wrapper fixed">
+			<tr>
+				<td width="190px" style="min-width:190px !important" class="left-sidebar" valign="top">
+					<div class="sidebar-button">
+						<a class="info-button phone" ></a>
+						<a class="info-button mail" ></a>
+						<a class="info-button sms" ></a>
+					</div>
+					<div class="menu-order">
+						<p class="title">Фильтры заказов</p>
+						<div class="list">
+							<ul>
+								<li><a href="#">Все <span class="cnt">(143)</span></a></li>
+								<li>
+									<a href="#" class="active">Новые <span class="cnt">(54)</span></a>
+									<ul>
+										<li><a href="#">Оцененные <span class="cnt">(54)</a></li>
+									</ul>
+								</li>
+								<li><a href="#">На подтверждении <span class="cnt">(150)</span></a></li>
+								<li><a href="#">В работе <span class="cnt">(150)</span></a></li>
+								<li><a href="#">Доработка <span class="cnt">(140)</span></a></li>
+								<li><a href="#">Проверка <span class="cnt">(140)</span></a></li>
+								<li><a href="#">Готовые <span class="cnt">(140)</span></a></li>
+								<li><a href="#">Архив <span class="cnt">(140)</span></a></li>
+								<li><a href="#">Другие <span class="cnt">(140)</span></a></li>
+								<li><a href="#">Отказ <span class="cnt">(140)</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="menu-filials">
+						<div class="title filials">
+							Филиалы
+							<ul class="sub-menu">
+								<li><a href="#">Вуз 59</a></li>
+								<li><a href="#">Зачетка - филиал</a></li>
+								<li><a href="#">Санкт - Петербург</a></li>
+								<li><a href="#">Волгоград</a></li>
+								<li><a href="#">VUZ 59</a></li>
+								<li><a href="#">Zaochnik5</a></li>
+							</ul>
+						</div>
+
+						<a class="new-order-button" href="#">Новый заказ</a>
+						<p class="title autors">Авторы</p>
+						<ul class="autor-list">
+							<li><a href='#'>По направлениям</a></li>
+							<li><a href='#'>Все авторы</a></li>
+						</ul>
+					</div>
+
+					<a href="#" class="add-autor-button">Добавить автора</a>
+					<p class="title">Дополнительно</p>
+					<ul class="other">
+						<li ><a href="#" class="stats">Статистика</a></li>
+						<li><a href="#" class="fin">Финансовый отчет</a></li>
+						<li><a href="#" class="work">Отчет по работе</a></li>
+						<li><a href="#" class="add-fil">Добавить филиал</a></li>
+						<li><a href="#" class="add-user">Добавить пользователя</a></li>
+						<li><a href="#" class="template">Шаблоны писем</a></li>
+						<li><a href="#" class="grab-mail">Сбор электронок</a></li>
+						<li><a href="#" class="grab-phone">Сбор телефонов</a></li>
+						<li><a href="#" class="download">Выгрузка заказов</a></li>
+						<li><a href="#" class="article">Статьи</a></li>
+					</ul>
+
+					<br/>
+				</td>
+				<td valign="top" style="min-width: 670px !important;">
+					<div class="tabs-bar">
+						<a class="button">Таблица заказов</a>
+						<a class="tab-link active" data-tab="#1">Заказ #1 <div class="remove"></div></a>
+						<a class="tab-link" data-tab="#1">Заказ #2 <div class="remove"></div></a>
+						<a class="tab-link" data-tab="#1">Заказ #2 <div class="remove"></div></a>
+						<a class="tab-link" data-tab="#1">Заказ #2 <div class="remove"></div></a>
+
+					</div>
+
+					<div class="content-area">
+						<table width="100%">
+							<tr>
+								<td width="35%" valign="top">
+									<!-- информация о заказе -->
+									<form>
+									<div class="inner-area">
+										<h2>Заказ #1</h2>
+										<div class="devider"></div>
+										<table class="param-table">
+											<tr>
+												<td><b>Тип работы</b></td>
+												<td>
+													<div class="dbl-area-select">
+														<div class="text">БЖД</div>
+															<select class="fix disabled" class="disabled">
+																<option selected >БЖД</option>
+																<option>ФБР</option>
+																<option>КГБ</option>
+															</select>
+													</div>
+													
+												</td>
+											</tr>
+											<tr>
+												<td><b>Направление</b></td>
+												<td>
+													<select class="fix disabled" id="poly-select">
+														<option></option>
+														<option selected>БЖД</option>
+														<option>ФБР</option>
+														<option>КГБ</option>
+													</select>
+													<a class="add-direction">+</a>
+													<div class="clearfix"></div>
+												</td>
+											</tr>
+										<tr>
+											<td><b>Тема</b></td>
+											<td>
+												<div class="dbl-area-auto">
+													<div class="text">По бж первая помощь при травматическом шоке Какие последствия и т.д., можно иллюстрации.</div>
+													<textarea class="disabled p90" rows="3" disabled="disabled ">По бж первая помощь при травматическом шоке Какие последствия и т.д., можно иллюстрации.</textarea>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><b>Создан</b></td>
+											<td>&nbsp;15.04.2015</td>
+										</tr>
+										<tr>
+											<td><b>Дата для автора</b></td>
+											<td><div class="dbl-area"><input type="text" value="15.08.2015" id="date1" disabled="disabled" class="disabled p90"/></div></td>
+										</tr>
+										<tr>
+											<td><b>Реальная дата</b></td>
+											<td><div class="dbl-area"><input type="text" value="10.01.2015" id="date2" disabled="disabled" class="disabled p90"/></div></td>
+										</tr>
+										<tr>
+											<td><b>ВУЗ</b></td>
+											<td><div class="dbl-area"><input type="text" value="ПГУ" disabled="disabled" class="disabled p90"/></div></td>
+										</tr>
+										<tr>
+											<td><b>Комментарий</b></td>
+											<td>
+												<div class="dbl-area-auto">
+													<div class="text">1. Анализ нормативно правовых актов по организации в сфере образования  2. Составить таблицу характеристик бюджетных организаций,казенных и автономных(критерии: права и обязанности,финансовые источники,имущество и еще какие нибудь критерии нужно) К понедельнику нужна работа..максимум к утру вторника</div>
+													<textarea class="disabled p90" rows="3" disabled="disabled ">1. Анализ нормативно правовых актов по организации в сфере образования  2. Составить таблицу характеристик бюджетных организаций,казенных и автономных(критерии: права и обязанности,финансовые источники,имущество и еще какие нибудь критерии нужно) К понедельнику нужна работа..максимум к утру вторника</textarea>
+												</div>
+											</td>
+										</tr>
+										</table>
+										<div class="devider"></div>
+
+										<table class="file-table">
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td aling="right"><a class="file-link arhive fade" href="#">Скачать одним архивом</a></td>
+												<td> </td>
+											</tr>
+
+											<tr>
+												<td aling="right">
+													<form>
+														<input type="file" class="add-file-inpt"/>
+													</form>
+												</td>
+												<td> </td>
+											</tr>
+										</table>
+									
+										<table class="param-table">
+											<tr>
+												<td align="right" width="60%">
+													<select >
+														<option selected>Передать другом филиалу</option>
+														<option>Вуз 59</option>
+														<option>Зачотка</option>
+													</select>
+												</td>
+												<td align="lef">
+													<input type="button" value="Ок">
+												</td>
+												</tr>
+											</table>
+										<div class="devider"></div>
+
+										<table class="param-table">
+											<tr>
+												<td width="35%"><b>Клиент</b></td>
+												<td><div class="dbl-area"><input type="text" value="Марина" disabled="disabled" class="disabled p90"/></div></td>
+											</tr>
+											<tr>
+												<td><b>Контакты</b></td>
+												<td>
+													<p class="contacts"><a class="autor-button phone  modal-title" data="+7 967 903 22 25"></a>+7 967 903 22 25</p>
+													<p class="contacts"><a class="autor-button mail  modal-title" data="mymail@test.ru"></a>mymail@test.ru</p>
+													<p class="contacts"><a class="autor-button sms modal-title" data="Написать смс"></a></p>
+													<br/>
+													<a class="autor-button phone  modal-title" data="+7 967 903 22 25"></a>
+													<a class="autor-button mail  modal-title" data="mymail@test.ru"></a>
+													<a class="autor-button sms modal-title" data="Написать смс"></a>
+												</td>
+											</tr>
+											<tr>
+												<td><b>Другие заказы клиента</b></td>
+												<td><a href="#" class="order-num">#30303</a><a href="#" class="order-num">#30675</a><a href="#" class="order-num">#230</a></td>
+											</tr>
+										</table>
+
+										<div class="devider"></div>
+
+										<table class="param-table">
+											<tr> 
+												<td width="30%"><b>Стоимость</b></td>
+												<td><div class="dbl-area"><input type="text" value="1 200" disabled="disabled" class="disabled p90"/></div></td>
+											</tr>
+											<tr>
+												<td><b>Предоплата</b></td>
+												<td><div class="dbl-area"><input type="text" value="500" disabled="disabled" class="disabled p90"/></div></td>
+											</tr>
+											<tr>
+												<td><b>З/п автора</b></td>
+												<td><div class="dbl-area"><input type="text" value="400" disabled="disabled" class="disabled p90"/></div></td>
+											</tr>
+										</table>
+										<div class="devider"></div>
+
+										<table class="param-table">
+											<tr>
+												<td width="30%"><b>Статус</b></td>
+												<td>
+
+													<div class="dbl-area-select">
+														<div class="text order-status">Доработка</div>
+															<select class="fix disabled" class="disabled">
+																<option selected >Доработка</option>
+																<option>Переработка</option>
+																<option>Выработка</option>
+															</select>
+													</div>
+												</td>
+											</tr>
+										</table>
+
+										<table class="param-table">
+											<tr>
+												<td width="30%">Оценить автора</td>
+												<td>
+													<div class="stars">
+														<div class="star active"></div><div class="star"></div><div class="star"></div>
+														<div class="star"></div><div class="star"></div><div class="star"></div>
+														<div class="star"></div><div class="star"></div><div class="star"></div>
+														<div class="star"></div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td width="30%"><br/><br/><b class="wrap">Комментарий  автора к заказу</b></td>
+												<td>
+													<table width="100%">
+														<tr>
+															<td ><div class="dbl-area-auto"><div class="text bold">Тема</div><textarea disabled="disabled" class="disabled fleft bold"></textarea></div></td>
+															<td ><div class="dbl-area"><input type="text" style="width: 30px;" value="3 стр" disabled="disabled" class="disabled fright bold"/></div></td>
+														</tr>
+													</table>
+													<div class="dbl-area-auto">
+														<div class="text">Слово «реферат» имеет латинские корни и происходит от слова «referre», что в буквальном переводе означает «докладывать, сообщать». Реферат имеет несколько значений (согласно Словарю иностранных слов, изд. «Русский язык», Москва, 1986 г. Первое из них трактует слово «реферат» как доклад на определенную тему, включающий обзор соответствующих литературных и других источников. Второе подает его как изложение содержания научной работы, книги и т.п. Реферат никак не соотносится с вторичным текстом, переписанным из первоисточника, поскольку это самостоятельная исследовательская работа</div>
+														<textarea class="disabled p90" rows="3" disabled="disabled ">Слово «реферат» имеет латинские корни и происходит от слова «referre», что в буквальном переводе означает «докладывать, сообщать». Реферат имеет несколько значений (согласно Словарю иностранных слов, изд. «Русский язык», Москва, 1986 г. Первое из них трактует слово «реферат» как доклад на определенную тему, включающий обзор соответствующих литературных и других источников. Второе подает его как изложение содержания научной работы, книги и т.п. Реферат никак не соотносится с вторичным текстом, переписанным из первоисточника, поскольку это самостоятельная исследовательская работа</textarea>
+													</div>
+												</td>
+											</tr>
+										</table>
+										<div class="devider"></div>
+										<h3>Файлы готового заказа</h3>
+
+										<table class="file-table">
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link approved fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link approved fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link no-approved fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											
+										</table> 
+										<div class="devider"></div>
+
+										<table class="file-table">
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link approved fade blue'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Отменить</a>
+												</td>
+											</tr>
+											<tr>
+												<td aling="right"><a class="file-link arhive fade" href="#">Скачать одним архивом</a></td>
+												<td> </td>
+											</tr>
+
+											<tr>
+												<td aling="right">
+													<form>
+														<input type="file" class="add-file-inpt"/>
+													</form>
+												</td>
+												<td> </td>
+											</tr>
+										</table>
+
+										<input type="submit" class="order-submit fade" value="Отправить клиенту" />
+
+									</div>
+									<!-- информация о заказе  конец-->
+								</form>
+								</td>
+
+								<td width="35%" valign="top">
+									<!-- область чата -->
+									<div class="inner-area autor-chat">
+									</br>
+										<h2>Переписка с автором</h2>
+										<a class="other-autors fade">Другие авторы</a>
+										<a class="select-autors fade">Выбрать автора</a>
+										<div class="devider"></div>
+
+										<p class="center">
+											<span class="autor-rating">10</span>
+											Наумчик(tepukina@mail.ru)
+										</p>
+										<div class="profit">Вознаграждение: 500</div>
+
+										<div class="chat-area">
+											<div class="chat-item chat-blue">
+												<p class="name">Автор (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+											</div>
+											<div class="chat-item chat-red">
+												<p class="name">Администратор (51.01.2015 21:58)</p>
+												<div class="chat-text">За 400? На 500 клиент не согласен</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+											<div class="chat-item chat-blue">
+												<p class="name">Автор (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+											<div class="chat-item chat-red">
+												<p class="name">Администратор (51.01.2015 21:58)</p>
+												<div class="chat-text">За 400? На 500 клиент не согласен</div>
+												
+											</div>
+											<div class="chat-item chat-blue">
+												<p class="name">Автор (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+										</div>
+										<form>
+											<textarea class="send-text" placeholder="Текст сообщения"></textarea>
+											<table class="param-table">
+												<tr>
+													<td width="50%"><input type="text" placeholder="Желаемая стоимость" class="chat-price"></td>
+													<td width="50%"><input type="file" class="add-file-inpt"/></td>
+												</tr>
+											</table>
+											<table class="file-table tleft">
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+										</table>
+											<table width="100%">
+												<tr>
+													<td align="right" width="50%"><input type="submit" class="order-submit-autor fade" value="Отправить" /></td>
+													<td align="left"><input type="submit" class="order-submit-autor fade" value="Отправить Всем" /></td>
+												</tr>
+											</table>
+											
+										</form>
+									</div>
+
+									
+									<!-- область чата конец -->
+								</td>
+								<td width="30%" valign="top">
+									<div class="inner-area autor-chat">
+										<div class="local-tab abs-tab">
+											<div class='tab-title fade'>Переписка админов</div>
+											<ul>
+												<li>Переписка админов</li>
+												<li>История по заказу</li>
+												<li>Платежи</li>
+												<li>Сообщения клиента</li>
+											</ul>
+										</div>
+									</br>
+
+									<div class="local-tab-content">
+										<h2 class="light-green">Переписка админов</h2>
+										<div class="devider"></div>
+										
+										<div class="chat-area">
+											<div class="chat-item chat-green">
+												<p class="name">Админ 1 (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+											</div>
+											<div class="chat-item chat-light-blue">
+												<p class="name">Админ 2 (15.01. 2015  13:11)</p>
+												<div class="chat-text">За 400? На 500 клиент не согласен</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+											<div class="chat-item chat-green">
+												<p class="name">Админ 1 (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+											</div>
+											<div class="chat-item chat-light-blue">
+												<p class="name">Админ 2 (15.01. 2015  13:11)</p>
+												<div class="chat-text">За 400? На 500 клиент не согласен</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+											<div class="chat-item chat-green">
+												<p class="name">Админ 1 (15.01. 2015  13:11)</p>
+												<div class="chat-text">Сделаю в срок, качественно <br/> Автор предложил стоимость 500</div>
+											</div>
+											<div class="chat-item chat-light-blue">
+												<p class="name">Админ 2 (15.01. 2015  13:11)</p>
+												<div class="chat-text">За 400? На 500 клиент не согласен</div>
+												<a href="#" class="file-link attach fade">Файл №1 [19.01.2015 02:18:22]</a>
+											</div>
+										</div>
+
+										<form>
+											<textarea class="send-text" placeholder="Текст сообщения"></textarea>
+											<table class="param-table">
+												<tr>
+													<td ><input type="file" class="add-file-inpt fleft"/></td>
+													<td>&nbsp;</td>
+												</tr>
+											</table>
+											<table class="file-table tleft">
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<a href="#" class='file-link attach fade'>Файл №1 [19.01.2015 02:18:22]</a>
+												</td>
+												<td align="left" >	
+													<a href="#" class="fade">Удалить</a>
+												</td>
+											</tr>
+										</table>
+											<input type="submit" class="order-submit fade light-green-bg" value="Отправить">
+											
+										</form>
+									</div>
+
+									<div class="local-tab-content">
+										<h2 class="light-green">История по заказу</h2>
+										<div class="devider"></div>
+										<div class="chat-area chat-history">
+											<div class="chat-item">
+												<table width='100%'>
+													<tr>
+														<td>
+															<p class="phone">
+																<span class="date">01.02.2015 12:00</span></br>
+																<span class="name">Иванов Иван</span>
+															</p>
+														</td>
+														<td><p class="right"></p></td>
+													</tr>
+													<tr>
+														<td>
+															<p class="sms">
+																<span class="date">01.02.2015 12:00</span></br>
+																<span class="name">Иванов Иван</span>
+															</p>
+														</td>
+														<td><p class="right"></p></td>
+													</tr>
+													<tr>
+														<td>
+															<p class="money">
+																<span class="date">01.02.2015 12:00</span></br>
+																<span class="name">Иванов Иван</span>
+															</p>
+														</td>
+														<td><p class="right">2 000</p></td>
+													</tr>
+													<tr>
+														<td>
+															<p class="mail">
+																<span class="date">01.02.2015 12:00</span></br>
+																<span class="name">Иванов Иван</span>
+															</p>
+														</td>
+														<td><p class="right"></p></td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="first status">Новое</div>
+															<div class="last status">Готовое</div>
+
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p class="money">
+																<span class="date">01.02.2015 12:00</span></br>
+																<span class="name">Иванов Иван</span>
+															</p>
+														</td>
+														<td><p class="right">2 000</p></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+
+									<div class="local-tab-content">
+										<h2 class="light-green">Платежи</h2>
+										<div class="devider"></div>
+									</div>
+
+									<div class="local-tab-content">
+										<h2 class="light-green">Сообщения клиента</h2>
+										<div class="devider"></div>
+									</div>
+
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+</body>
+</html>

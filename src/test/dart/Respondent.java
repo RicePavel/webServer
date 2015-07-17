@@ -31,7 +31,8 @@ public class Respondent implements Runnable {
         String fileContent = fileManager.getFileContent();
         fileContent = replaceParams(fileContent, params, type);
         Response response = new Response(client);
-        response.getFileContent(fileContent);
+        DataType dataType = fileManager.getDataType();
+        response.getFileContent(fileContent, dataType);
       } else {
         Response response = new Response(client);
         response.getErrorCode();
@@ -50,15 +51,15 @@ public class Respondent implements Runnable {
   private String replaceParams(String content, Map<String, String> params, String type) {
     for (String key : params.keySet()) {
       String value = params.get(key);
-      if (type.equals(RequestParser.GET)) {
-        content = content.replace("<get." + key + ">", value);
-      } else if (type.equals(RequestParser.POST)) {
-        content = content.replace("<post." + key + ">", value);
+      if (value != null) {
+        if (type.equals(RequestParser.GET)) {
+          content = content.replace("<get." + key + ">", value);
+        } else if (type.equals(RequestParser.POST)) {
+          content = content.replace("<post." + key + ">", value);
+        }
       }
     }
     return content;
   }
-
- 
 
 }

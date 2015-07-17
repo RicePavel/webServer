@@ -16,19 +16,25 @@ import java.io.IOException;
  * @author Rice Pavel
  */
 public class FileManager {
-  
+
   private boolean exists = false;
-  
+
   private String fileContent = "";
-  
+
+  private DataType type;
+
   public boolean exists() {
     return exists;
   }
-  
+
   public String getFileContent() {
     return fileContent;
   }
   
+  public DataType getDataType() {
+    return type;
+  }
+
   public FileManager(String fileName) throws IOException {
     File currentFile = new File(".");
     String currentFilePath = currentFile.getCanonicalPath();
@@ -38,22 +44,31 @@ public class FileManager {
     if (exists) {
       String fileExt = getFileType(fileName);
       if (fileExt.equals("html") || fileExt.equals("txt")) {
-      fileContent = getFileContent(file);
+        setDataType(fileExt);
+        fileContent = getFileContent(file);
       } else {
         exists = false;
       }
     }
   }
-  
+
+  private void setDataType(String fileExt) {
+    if (fileExt.equals("html")) {
+      type = DataType.HTML;
+    } else if (fileExt.equals("txt")) {
+      type = DataType.TEXT;
+    }
+  }
+
   private String getFileType(String fileName) {
-    String[] str = fileName.split(".");
+    String[] str = fileName.split("\\.");
     if (str.length != 0) {
       return str[str.length - 1];
     } else {
       return "";
     }
   }
-  
+
   private String getFileContent(File file) throws FileNotFoundException, IOException {
     String content = "";
     BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -64,5 +79,5 @@ public class FileManager {
     }
     return content;
   }
-  
+
 }

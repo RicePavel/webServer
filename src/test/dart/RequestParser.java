@@ -9,7 +9,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
+import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,20 +22,20 @@ import java.util.Map;
 public class RequestParser {
 
   public static final String GET = "GET";
-  
+
   public static final String POST = "POST";
-  
+
   private Socket client;
 
-  private String type;
+  private String type = "";
 
-  private String url;
+  private String url = "";
 
-  private String fileName;
+  private String fileName = "";
 
-  private Map<String, String> params;
+  private Map<String, String> params = new HashMap();
 
-  private Map<String, String> headers;
+  private Map<String, String> headers = new HashMap();
 
   public String getFileName() {
     return fileName;
@@ -45,7 +48,7 @@ public class RequestParser {
   public Map<String, String> getParams() {
     return params;
   }
-  
+
   public String getType() {
     return type;
   }
@@ -62,8 +65,6 @@ public class RequestParser {
     this.headers = headers;
   }
 
-  
-  
   public RequestParser(Socket client) throws IOException, Exception {
     this.client = client;
     parse();
@@ -71,7 +72,7 @@ public class RequestParser {
 
   private void parse() throws IOException, Exception {
     InputStream is = client.getInputStream();
-    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    BufferedReader br = new BufferedReader(new InputStreamReader(is, "ISO-8859-1"));
     String firstLine = br.readLine();
     boolean right = false;
     if (firstLine != null) {
@@ -81,12 +82,13 @@ public class RequestParser {
         if (!type.equals(GET) && !type.equals(POST)) {
           throw new Exception("Неизвестный тип запроса");
         }
-        url = arr[1];
+        url = decodeUrl(arr[1]);
         right = true;
       }
     }
     if (!right) {
-      throw new Exception("Неправильный формат запроса");
+      //throw new Exception("Неправильный формат запроса");
+      return;
     }
     if (type.equals("GET")) {
       readGet(br);
@@ -97,18 +99,26 @@ public class RequestParser {
     }
   }
   
+  private String decodeUrl(String url) throws UnsupportedEncodingException {
+    return java.net.URLDecoder.decode(url, "UTF-8");
+  }
+
   private void parsePostUrl() {
     this.fileName = cutFileName(url);
   }
 
-
   private void readGet(BufferedReader br) throws IOException {
-    String str = null;
-    while ((str = br.readLine()) != null) {
-      String[] strArray = str.split(":");
-      if (strArray.length == 2) {
-        headers.put(strArray[0].trim(), strArray[1].trim());
-      }
+    for (String str = br.readLine(); str != null && str.length() > 0; str = br.readLine()) {
+      addHeader(str);
+    }
+  }
+
+  private void addHeader(String headerLine) {
+    int i = headerLine.indexOf(":");
+    if (i > 0) {
+      String name = headerLine.substring(0, i);
+      String value = headerLine.substring(i + 1);
+      headers.put(name.trim(), value.trim());
     }
   }
 
@@ -118,7 +128,7 @@ public class RequestParser {
         String fileName = url;
         this.fileName = cutFileName(fileName);
       } else {
-        String[] arr = url.split("?");
+        String[] arr = url.split("\\?");
         String fileName = arr[0];
         this.fileName = cutFileName(fileName);
         String paramString = arr[1];
@@ -126,10 +136,10 @@ public class RequestParser {
       }
     }
   }
-  
+
   private void parseParamsString(String paramsString) {
     String[] arr = paramsString.split("&");
-    for (String str: arr) {
+    for (String str : arr) {
       String[] keyValue = str.split("=");
       if (keyValue.length == 2) {
         params.put(keyValue[0], keyValue[1]);
@@ -145,22 +155,22 @@ public class RequestParser {
   }
 
   private void readPost(BufferedReader br) throws IOException {
-    String str;
-    boolean bodyLine = false;
-    while ((str = br.readLine()) != null) {
-      if (!bodyLine) {
-        if (str.isEmpty()) {
-          bodyLine = true;
-        } else {
-          String[] strArray = str.split(":");
-          if (strArray.length == 2) {
-            headers.put(strArray[0].trim(), strArray[1].trim());
-          }
-        }
-      } else {
-        parseBodyLine(str);
-        break;
-      }
+    for (String str = br.readLine(); str != null && str.length() > 0; str = br.readLine()) {
+      addHeader(str);
+    }
+    int contentLength = getContentLength();
+    char[] content = new char[contentLength];
+    br.read(content);
+    String bodyLine = new String(content);
+    bodyLine = decodeUrl(bodyLine);
+    parseBodyLine(bodyLine);
+  }
+
+  private int getContentLength() {
+    try {
+      return Integer.valueOf(headers.get("Content-Length"));
+    } catch (Exception e) {
+      return 0;
     }
   }
 

@@ -16,14 +16,14 @@ import java.net.Socket;
  */
 public class Server implements Runnable {
 
-  private final int port;
-  private final int threadCount;
+  //private final int port;
+  //private final int threadCount;
   private final ServerSocket serverSocket;
   private final Pool pool;
 
   public Server(int port, int threadCount) throws IOException {
-    this.port = port;
-    this.threadCount = threadCount;
+    //this.port = port;
+    //this.threadCount = threadCount;
     serverSocket = new ServerSocket(port);
     pool = new Pool(threadCount);
   }
