@@ -16,14 +16,10 @@ import java.net.Socket;
  */
 public class Server implements Runnable {
 
-  //private final int port;
-  //private final int threadCount;
   private final ServerSocket serverSocket;
   private final Pool pool;
 
   public Server(int port, int threadCount) throws IOException {
-    //this.port = port;
-    //this.threadCount = threadCount;
     serverSocket = new ServerSocket(port);
     pool = new Pool(threadCount);
   }
@@ -31,7 +27,6 @@ public class Server implements Runnable {
   @Override
   public void run() {
     try {
-      System.out.println("сервер запущен");
       while (true) {
         Socket client = serverSocket.accept();
         Respondent respondent = new Respondent(client);
