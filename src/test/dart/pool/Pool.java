@@ -29,6 +29,12 @@ public class Pool {
       workers[i].start();
     }
   }
+  
+  public void stop() {
+    for (PoolWorker worker: workers) {
+      worker.interrupt();
+    }
+  }
 
   public void add(Runnable runnable) {
     queue.addLast(runnable);

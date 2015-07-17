@@ -26,16 +26,17 @@ public class Main {
     int port = getIntFromConsole();
     out.println("Введите количество потоков: Enter count threads:");
     int count = getIntFromConsole();
-    System.out.println("запускаем сервер...");
     Server server = new Server(port, count);
     Thread thread = new Thread(server);
     thread.start();
-    System.out.println("сервер запущен. Для остановки введите exit");
+    System.out.println("сервер запущен. Для остановки введите exit. The server is running. To stop, enter exit");
     while (true) {
       String str = scanner.next();
-      if (str.equals("exit")) {
-        thread.stop();
-        break;
+      if (str.trim().equals("exit")) {
+        server.stop();
+        thread.interrupt();
+        System.exit(0);
+        return;
       }
     }
   }
